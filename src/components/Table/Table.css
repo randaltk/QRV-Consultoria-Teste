@@ -8,11 +8,12 @@
 table {
   margin: 0 auto;
   border-collapse: collapse;
+  margin-top: 1rem;
 }
 th {
   background-color: rgb(136, 136, 136);
   width: 8rem;
-  opacity: 0;
+  opacity: 0.9;
 }
 
 td {
@@ -20,6 +21,7 @@ td {
 }
 
 input {
+  margin-top: 1rem;
   outline: none;
 }
 
