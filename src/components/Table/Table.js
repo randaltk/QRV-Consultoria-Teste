@@ -51,7 +51,6 @@ const Table = () => {
               </thead>
               <tbody>
                 {apiData
-
                   .filter((val) => {
                     if (searchUser == "") {
                       return val;
