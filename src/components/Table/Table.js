@@ -23,20 +23,12 @@ const Table = () => {
       .catch((err) => console.error("Falha ao acessar dados da API"));
   }
 
-  const filterData = (apiData) => {
-    return apiData.filter((val) => {
-      if (searchUser == "") {
-        return val;
-      } else if (
-        val.first_name.toLowerCase().includes(searchUser.toLowerCase())
-      ) {
-        return val;
-      } else if (
-        val.last_name.toLowerCase().includes(searchUser.toLowerCase())
-      ) {
-        return val;
-      }
-    });
+  const filterData = () => {
+    return apiData.filter(
+      (user) =>
+        user.first_name.toLowerCase().includes(searchUser.toLowerCase()) ||
+        user.last_name.toLowerCase().includes(searchUser.toLowerCase())
+    );
   };
 
   const showMoreData = () => {
