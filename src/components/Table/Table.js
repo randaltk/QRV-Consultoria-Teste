@@ -38,7 +38,7 @@ const Table = () => {
                 setSearchUser(e.target.value);
               }}
             />
-            <table cellSpacing={10}>
+            <table cellSpacing={60}>
               <thead>
                 <tr>
                   <th>Id</th>

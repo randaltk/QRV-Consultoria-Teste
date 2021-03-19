@@ -5,9 +5,9 @@ function App() {
   return (
     <>
       <NavBar />
-      <div style={{ backgroundColor: "#000" }}>
-        <Table />
-      </div>
+
+      <Table />
+
       <div style={{ backgroundColor: "transparent", height: "30rem" }}></div>
       <Footer />
     </>

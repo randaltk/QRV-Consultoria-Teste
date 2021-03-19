@@ -2,7 +2,7 @@ import "./NavBar.css";
 import Logo from "../../assets/images/logo_qrv.png";
 
 import { Link } from "react-router-dom";
-const NavBar = () => {
+const NavBar = ({ click }) => {
   return (
     <>
       <div className="nav__wrapper">
@@ -19,6 +19,12 @@ const NavBar = () => {
             <a href="/">
               <i className="fab fa-facebook-f"></i>
             </a>
+          </div>
+
+          <div className="hamburger__menu" onClick={click}>
+            <div></div>
+            <div></div>
+            <div></div>
           </div>
         </div>
       </div>
