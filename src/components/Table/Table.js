@@ -23,7 +23,7 @@ const Table = () => {
       .catch((err) => console.error("Falha ao acessar dados da API"));
   }
 
-  function filterData(apiData) {
+  const filterData = (apiData) => {
     return apiData.filter((val) => {
       if (searchUser == "") {
         return val;
@@ -37,7 +37,7 @@ const Table = () => {
         return val;
       }
     });
-  }
+  };
 
   const showMoreData = () => {
     setVisible((prevValue) => prevValue + 15);
