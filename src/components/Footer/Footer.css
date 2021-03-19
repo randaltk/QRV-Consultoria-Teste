@@ -1,23 +1,21 @@
 .footer__wrapper {
-    width:100%; 
-    margin: 0 auto;
-    background-color:#252525;
-position:fixed;
-bottom:0;
-
-    
+  width: 100%;
+  margin: 0 auto;
+  background-color: #252525;
+  position: fixed;
+  bottom: 0;
 }
-.footer__container{
-    margin: 0 auto;
-    padding: 1rem;
-    width:90%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
+.footer__container {
+  margin: 0 auto;
+  padding: 1rem;
+  width: 90%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 p {
-    font-size: 0.75rem;
-    color: rgb(119, 119, 119)
+  font-size: 0.75rem;
+  color: rgb(119, 119, 119);
 }

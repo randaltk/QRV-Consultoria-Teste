@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
 import api from "../../services/api";
 import "./Table.css";
+
 const Table = () => {
   const [apiData, setApiData] = useState([]);
   const [searchUser, setSearchUser] = useState("");
   const [loading, setLoading] = useState(false);
   const [visible, setVisible] = useState(25);
+
   useEffect(() => {
     loadApiData();
   }, []);
 
-  const loadApiData = () => {
+  async function loadApiData() {
     setLoading(true);
     api
       .get()
@@ -19,11 +21,28 @@ const Table = () => {
         setLoading(false);
       })
       .catch((err) => console.error("Falha ao acessar dados da API"));
-  };
+  }
+
+  function filterData(apiData) {
+    return apiData.filter((val) => {
+      if (searchUser == "") {
+        return val;
+      } else if (
+        val.first_name.toLowerCase().includes(searchUser.toLowerCase())
+      ) {
+        return val;
+      } else if (
+        val.last_name.toLowerCase().includes(searchUser.toLowerCase())
+      ) {
+        return val;
+      }
+    });
+  }
 
   const showMoreData = () => {
     setVisible((prevValue) => prevValue + 15);
   };
+
   return (
     <>
       <div className="table__wrapper">
@@ -50,24 +69,7 @@ const Table = () => {
                 </tr>
               </thead>
               <tbody>
-                {apiData
-                  .filter((val) => {
-                    if (searchUser == "") {
-                      return val;
-                    } else if (
-                      val.first_name
-                        .toLowerCase()
-                        .includes(searchUser.toLowerCase())
-                    ) {
-                      return val;
-                    } else if (
-                      val.last_name
-                        .toLowerCase()
-                        .includes(searchUser.toLowerCase())
-                    ) {
-                      return val;
-                    }
-                  })
+                {filterData(apiData)
                   .slice(0, visible)
                   .map((users, key) => {
                     return (
