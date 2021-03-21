@@ -12,7 +12,7 @@ const Table = () => {
     loadApiData();
   }, []);
 
-  async function loadApiData() {
+  function loadApiData() {
     setLoading(true);
     api
       .get()
