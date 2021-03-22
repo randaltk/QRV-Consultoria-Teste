@@ -12,7 +12,7 @@ const Table = () => {
     loadApiData();
   }, []);
 
-  function loadApiData() {
+  const loadApiData = () => {
     setLoading(true);
     api
       .get()
@@ -21,7 +21,7 @@ const Table = () => {
         setLoading(false);
       })
       .catch((err) => console.error("Falha ao acessar dados da API"));
-  }
+  };
 
   const filterData = () => {
     return apiData.filter(
